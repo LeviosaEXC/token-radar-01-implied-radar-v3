@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Implied Radar — token-radar-01</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header id="top">
+<div class="wrap">
+<div class="ttl"><h1>Implied Radar</h1></div>
+<div class="brow"><span id="proofBadge" class="badge">Recompute: …</span><span id="auditBadge" class="badge">Audit: …</span></div>
+<nav id="tabs">
+<a href="#tab=radar" data-tab="radar">Radar</a><a href="#tab=model" data-tab="model">Model &amp; gates</a><a href="#tab=method" data-tab="method">Method</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<div id="strip"></div>
+<main>
+<section id="tab-radar">
+<div id="controls">
+<label>Tier <select id="fTier"><option value="">All tiers</option><option>ROBUST</option><option>FARM</option><option>THIN</option><option>SKIP</option><option>THIN-UNPRICED</option></select></label>
+<label>Sort <select id="fSort"><option value="rank">Rank</option><option value="tvl">TVL</option><option value="value">Implied value</option><option value="net">Net $/hr (POINT)</option></select></label>
+</div>
+<div id="compare"></div>
+<div class="tblwrap"><table id="board">
+<thead><tr><th>Rank</th><th>Protocol</th><th>Chain</th><th>TVL</th><th>Implied value</th><th>Rank band</th><th>Net $/hr LOW/PT</th><th>Tier</th><th>Conf</th></tr></thead>
+<tbody id="rows"></tbody>
+</table></div>
+<p class="small mut">Rows whose refit cores overlap are not distinguishable by this model. The board still orders them — a radar has to — but the order inside a core is not a claim.</p>
+<h2>Value vs size <span class="mut small">click a point to open its drawer</span></h2>
+<div id="scatter"></div>
+</section>
+<section id="tab-model" hidden></section>
+<section id="tab-method" hidden></section>
+</main>
+<footer id="foot"></footer>
+</div>
+<aside id="drawer" hidden></aside>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
